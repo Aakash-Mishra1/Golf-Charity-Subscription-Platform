@@ -35,8 +35,8 @@
   gap: 24px;
 }
 
-/* Card */
-.card {
+/* Card — renamed to charityCard to avoid conflict with global .card */
+.charityCard {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -45,19 +45,17 @@
   flex-direction: column;
   transition: all 0.25s ease;
 }
-.card:hover {
+.charityCard:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(74,222,128,0.12);
 }
 
 /* Featured Card */
-.featuredCard {
+.charityFeaturedCard {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, rgba(74,222,128,0.08), var(--bg-card));
   border-color: rgba(74,222,128,0.3);
-  flex-direction: row;
-  align-items: stretch;
   min-height: 180px;
 }
 
@@ -77,7 +75,7 @@
   width: fit-content;
 }
 
-.cardBody {
+.charityCardBody {
   padding: 24px;
   flex: 1;
   display: flex;
@@ -93,7 +91,7 @@
   color: var(--text-muted);
 }
 
-.cardName {
+.charityCardName {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
@@ -101,7 +99,7 @@
   margin: 0;
 }
 
-.cardDesc {
+.charityCardDesc {
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.7;
@@ -132,17 +130,5 @@
   cursor: not-allowed;
 }
 
-/* Empty */
-.empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 60px 24px;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 15px;
-}
-
-@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } .featuredCard { flex-direction: column; } }
-@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .featuredCard { grid-column: auto; } }
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .charityFeaturedCard { grid-column: auto; } }
